@@ -54,11 +54,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-INTERNAL_IPS = [
-    # ...
-    '127.0.0.1',
-    # ...
-]
 
 ROOT_URLCONF = 'storefront.urls'
 
@@ -90,7 +85,7 @@ DATABASES = {
         'NAME': 'storefront',
         'HOST': 'localhost',
         'USER': 'root',
-        'PASSWORD': 'MyPassword'
+        'PASSWORD': 'hasianmandela170410'
     }
 }
 
