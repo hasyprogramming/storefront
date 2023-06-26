@@ -1,9 +1,17 @@
+from django.db import models, transaction
 from django.shortcuts import render
-from django.core.exceptions import ObjectDoesNotExist
-from django.db.models.aggregates import Count, Max, Min, Avg
-from django.http import HttpResponse
-from store.models import Order, Product
+from store.models import Product, Customer, Order, OrderItem, Product, Collection, Cart, CartItem
+@transaction.atomic()
 def say_hello(request):
-    result = Order.objects.aggregate(count=Count('id'))
-    result = Order.objects.filter(customer_id=1).aggregate(count=Count('id'))
-    return render(request, 'hello.html', {'name': 'Mosh', 'result': result})
+    cart = Cart()
+    cart.save()
+    item1 = CartItem()
+    item1.cart = cart
+    item1.product_id = 1
+    item1.quantity = 2
+    item1.save()
+
+    item1 = CartItem.objects.get(pk=1)
+    item1.quantity = 2
+    item1.save()
+    return render(request, 'hello.html', {'name': 'hasy'})

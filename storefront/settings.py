@@ -35,10 +35,12 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.messages',
+    'django.contrib.sessions',
     'django.contrib.staticfiles',
     'playground',
     'debug_toolbar',
     'store',
+    'store_custom',
     'tags',
     'likes'
 ]
